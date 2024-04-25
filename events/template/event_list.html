@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event List</title>
+</head>
+<body>
+    <h1>Event List</h1>
+    <ul>
+        {% for event in events %}
+            <li>{{ event.name }}</li>
+            <p>Date: {{ event.date.date }}</p>
+            <p>Description: {{ event.description }}</p>
+            <p>Brochure: <a href="{% url 'brochure_detail' event.pk %}">View Brochure</a></p>
+        {% endfor %}
+    </ul>
+</body>
+</html>
